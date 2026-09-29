@@ -1,1 +1,8 @@
-
+*.iso
+*.apk
+*.tar.gz
+aports/
+tmp/
+iso/
+out/
+node_modules/
