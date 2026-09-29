@@ -15,6 +15,8 @@ profile_riftdeck() {
         dbus
         networkmanager
         networkmanager-wifi
+        networkmanager-cli
+        networkmanager-tui
         wireless-tools
         wpa_supplicant
         alsa-utils
@@ -24,6 +26,8 @@ profile_riftdeck() {
         wireplumber
         bluez
         bluez-openrc
+        pipewire-spa-bluez
+        hidapi
         font-noto
         font-noto-emoji
         ttf-dejavu
@@ -41,7 +45,8 @@ profile_riftdeck() {
         ntfs-3g
         exfat-utils
         gnome-software
-        gnome-software-plugin-flatpak"
+        gnome-software-plugin-flatpak
+        cryptsetup"
 
     apkovl="genapkovl-riftdeck.sh"
 
