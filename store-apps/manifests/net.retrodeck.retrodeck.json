@@ -1,1 +1,25 @@
-
+{
+  "app-id": "net.retrodeck.retrodeck",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "46",
+  "sdk": "org.gnome.Sdk",
+  "command": "retrodeck",
+  "finish-args": [
+    "--share=ipc",
+    "--socket=x11",
+    "--socket=wayland",
+    "--device=all",
+    "--filesystem=home",
+    "--share=network"
+  ],
+  "modules": [
+    {
+      "name": "retrodeck",
+      "buildsystem": "simple",
+      "build-commands": [
+        "echo 'RetroDECK build placeholder'",
+        "echo 'Replace with real build steps from https://github.com/RetroDECK/RetroDECK'"
+      ]
+    }
+  ]
+}
