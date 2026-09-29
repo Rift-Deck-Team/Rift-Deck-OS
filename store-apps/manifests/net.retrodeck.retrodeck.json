@@ -17,8 +17,7 @@
       "name": "retrodeck",
       "buildsystem": "simple",
       "build-commands": [
-        "echo 'RetroDECK build placeholder'",
-        "echo 'Replace with real build steps from https://github.com/RetroDECK/RetroDECK'"
+        "echo 'RetroDECK build placeholder'"
       ]
     }
   ]
