@@ -1,1 +1,37 @@
+name: Build Rift Deck OS ISO
 
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Alpine
+        uses: jirutka/setup-alpine@v1
+        with:
+          branch: edge
+
+      - name: Build ISO
+        shell: alpine.sh --root {0}
+        run: |
+          apk add --no-cache alpine-sdk alpine-conf syslinux xorriso \
+            squashfs-tools grub grub-efi doas mtools dosfstools
+          echo "permit nopass root" >> /etc/doas.conf
+          abuild-keygen -i -a -n -q
+          mkdir -p ~/tmp ~/iso
+          export TMPDIR=~/tmp
+          git clone --depth=1 https://gitlab.alpinelinux.org/alpine/aports.git
+          cp -rf custom/* aports/scripts/
+          chmod +x aports/scripts/*
+          sh aports/scripts/mkimage.sh --tag edge --outdir ~/iso \
+            --arch x86_64 --profile riftdeck
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: riftdeck-iso
+          path: /home/runner/iso/*.iso
