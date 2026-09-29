@@ -1,1 +1,34 @@
+name: Build Rift Store
 
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'store-apps/manifests/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  flatter:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/andyholmes/flatter/gnome:master
+      options: --privileged
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build Flatpak Repo
+        uses: andyholmes/flatter@main
+        with:
+          files: |
+            store-apps/manifests/*.json
+          upload-pages-artifact: true
+          upload-pages-includes: |
+            index.html
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
