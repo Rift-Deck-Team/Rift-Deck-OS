@@ -1,1 +1,10 @@
-
+# Only these appear in Rift Store's Curated tab
+- id: net.retrodeck.retrodeck
+  name: RetroDECK
+  description: All-in-one emulation suite
+- id: org.DolphinEmu.dolphin
+  name: Dolphin
+  description: GameCube and Wii emulator
+- id: org.duckstation.DuckStation
+  name: DuckStation
+  description: PlayStation 1 emulator
