@@ -1,10 +1,14 @@
-# Only these appear in Rift Store's Curated tab
+# Rift Store curated apps
+# Only these appear in Bazaar's Curated tab
 - id: net.retrodeck.retrodeck
   name: RetroDECK
   description: All-in-one emulation suite
-- id: org.DolphinEmu.dolphin
-  name: Dolphin
-  description: GameCube and Wii emulator
-- id: org.duckstation.DuckStation
-  name: DuckStation
-  description: PlayStation 1 emulator
+- id: com.valvesoftware.Steam
+  name: Steam
+  description: Game launcher
+- id: com.microsoft.Edge
+  name: Xbox Cloud Gaming
+  description: Play Xbox games in the cloud
+- id: io.github.kolunmi.Bazaar
+  name: Rift Store
+  description: Install apps and emulators
