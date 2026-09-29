@@ -129,15 +129,6 @@ ARM devices · Macs · 32-bit systems
 
 ---
 
-## 🛠️ Building
-
-<div align="center">
-
-Push to `main` — GitHub Actions builds the ISO automatically.
-
-Grab the latest build from the [Actions tab](../../actions).
-
-</div>
 
 ---
 
